@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Songo 237 – Version 3 (Multijoueur Ajax)</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1>Songo 237</h1>
+  <p class="subtitle">jeu de semailles camerounais · multijoueur · navigateurs distants</p>
+  <div class="badge-v3">VERSION 3 — MODERNISÉE & CORRIGÉE</div>
+
+  <div id="lobby">
+    <h2>🎮 Rejoindre une Partie</h2>
+    <p style="color:var(--dim);font-size:0.8rem;text-align:center">
+      Crée une partie et partage le code à ton adversaire.<br>
+      Il colle le code et clique <strong style="color:var(--highlight)">Rejoindre</strong>.
+    </p>
+    <div class="lobby-btns">
+      <button class="btn" id="btn-new-game">Nouvelle Partie</button>
+    </div>
+    <hr style="width:100%;border-color:var(--card)">
+    <input type="text" id="code-input" placeholder="CODE" maxlength="6" />
+    <button class="btn secondary" id="btn-join-game">Rejoindre</button>
+  </div>
+
+  <div id="game-code"></div>
+
+  <div class="scores">
+    <div class="score-box" id="score-north">
+      <div class="label">Nord 🔵</div>
+      <div class="value" id="val-north">0</div>
+      <div class="label">graines capturées</div>
+    </div>
+    <div class="score-box" id="score-south">
+      <div class="label">Sud 🔴</div>
+      <div class="value" id="val-south">0</div>
+      <div class="label">graines capturées</div>
+    </div>
+  </div>
+
+  <div class="tablier">
+    <div class="camp-label north">🔵 Nord (joue ←)</div>
+    <div class="row" id="row-north"></div>
+    <div class="divider"><div class="divider-line"></div></div>
+    <div class="row" id="row-south"></div>
+    <div class="camp-label south" style="margin-top:8px">Sud (joue →) 🔴</div>
+  </div>
+
+  <div class="status-bar" id="status">En attente d'une partie...</div>
+  <div class="log" id="log"><p>Bienvenue sur Songo 237 V3.</p></div>
+
+  <script src="js/constants.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/ajax.js"></script>
+</body>
+</html>
