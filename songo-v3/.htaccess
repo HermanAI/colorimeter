@@ -1,0 +1,9 @@
+# Activer les headers personnalisés
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type"
+</IfModule>
+
+# Redirection pour les requêtes manquantes
+ErrorDocument 404 /songo-v3/index.html
